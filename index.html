@@ -1,250 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Downstream Processing Q&A</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
-    background: #f0f2f5;
-  }
-  #sidebar {
-    width: 320px;
-    overflow-y: auto;
-    background: #1e1e2f;
-    color: #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  #sidebar h2 {
-    color: #f0a500;
-    margin-top: 0;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #f0a500;
-  }
-  #questionList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #questionList li {
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 4px;
-    font-size: 14px;
-    background: transparent;
-    transition: background 0.2s;
-  }
-  #questionList li:hover {
-    background: #33334d;
-  }
-  #questionList li.active {
-    background: #f0a500;
-    color: #1e1e2f;
-    font-weight: bold;
-  }
-  #questionList .set-title {
-    font-weight: bold;
-    color: #ffbf47;
-    padding: 10px 0 5px 0;
-    cursor: default;
-    user-select: none;
-    font-size: 16px;
-  }
-  #main {
-    flex-grow: 1;
-    padding: 30px;
-    overflow-y: auto;
-    background: white;
-    box-sizing: border-box;
-  }
-  #main h3 {
-    margin-top: 0;
-    color: #1e1e2f;
-  }
-  #main p {
-    font-size: 16px;
-    line-height: 1.5;
-    white-space: pre-wrap;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Question Sets - Study App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>📚 Study Question Sets</h1>
+    </header>
+    <main>
+      <nav id="set-list" aria-label="Question Sets">
+        <!-- Dynamic List of Sets -->
+      </nav>
 
-<div id="sidebar">
-  <h2>Downstream Processing Q&A</h2>
-  <ul id="questionList"></ul>
-</div>
+      <section class="card">
+        <h2 id="question-title" class="question">Loading questions...</h2>
+        <p id="answer-text" class="answer"></p>
 
-<div id="main">
-  <h3>Welcome</h3>
-  <p>Select a question from the left to see the answer.</p>
-</div>
+        <div class="controls">
+          <button id="prev-btn" disabled>← Previous</button>
+          <button id="next-btn" disabled>Next →</button>
+        </div>
+      </section>
+    </main>
+  </div>
 
-<script>
-  const data = [
-    {
-      set: "Set 1",
-      questions: [
-        {q:"Name four stages of downstream processing.", a:`Cell disruption
-Solid-liquid separation
-Purification
-Product polishing and formulation`},
-        {q:"Give the principle of cell lysis by ultrasonication.", a:"Ultrasonication causes cavitation (formation and collapse of microbubbles) producing shear forces that disrupt cell membranes, leading to cell lysis."},
-        {q:"Differentiate between precipitation and crystallization.", a:"Precipitation: Rapid formation of insoluble solids, often amorphous.\n\nCrystallization: Slow, controlled formation of highly ordered solid crystals."},
-        {q:"What is lyophilization?", a:"Freeze-drying technique where frozen water in a product sublimates under vacuum, removing moisture without heat damage."},
-        {q:"Define adsorption isotherms.", a:"Graphs showing the relationship between amount of adsorbate on adsorbent and its concentration in fluid phase at constant temperature."},
-        {q:"What is an azeotrope?", a:"A mixture of liquids that boils at a constant temperature with fixed composition, making it inseparable by normal distillation."},
-        {q:"How is dialysis different from reverse osmosis?", a:"Dialysis separates solutes by diffusion through a semipermeable membrane.\n\nReverse osmosis uses pressure to force solvent through a membrane against osmotic pressure."},
-        {q:"Name the polymerizing agent in PAGE.", a:"N,N'-Methylenebisacrylamide (Bis-acrylamide)."},
-        {q:"What is the significance of relation factor in chromatography?", a:"It quantifies relative retention times of compounds, aiding identification and column performance analysis."},
-        {q:"Give properties of a good extraction solvent.", a:"Selective for target\nLow toxicity\nImmiscible with other phase\nChemically stable\nEconomical and easy to recover"},
-      ]
-    },
-    {
-      set: "Set 2 (Brief answers)",
-      questions: [
-        {q:"Mention the need for downstream processing.", a:"To isolate and purify the desired biomolecules from complex mixtures."},
-        {q:"Which unit operations separate biomolecules based on ionic charge and solubility?", a:"Ion exchange chromatography (ionic charge), precipitation (solubility)."},
-        {q:"Give function and example of filter aids.", a:"Improve filtration by preventing clogging and increasing flow rate. Example: Diatomaceous earth."},
-        {q:"Difference between salting in and salting out?", a:"Salting in increases solubility at low salt; salting out decreases solubility at high salt, causing precipitation."},
-        {q:"How can viruses and inorganic salts be removed from a sample?", a:"Viruses by ultrafiltration; salts by dialysis or gel filtration."},
-        {q:"What are ampholytes?", a:"Molecules acting as both acid and base, used for pH gradient formation in isoelectric focusing."},
-        {q:"Significance of small particle size in stationary phase of HPLC?", a:"Higher surface area, better resolution, faster separation."},
-        {q:"Define bound and unbound moisture.", a:"Bound moisture is chemically/physically attached water; unbound moisture is free water removable by drying."},
-        {q:"When is aqueous two-phase extraction preferred?", a:"For gentle separation of sensitive biomolecules."},
-        {q:"Name different centrifuge rotors.", a:"Fixed-angle, swinging-bucket, ultracentrifuge rotors."},
-      ]
-    },
-    {
-      set: "Set 3",
-      questions: [
-        {q:"Differentiate downstream from upstream processing.", a:"Upstream: Cell growth and cultivation; Downstream: Product recovery and purification."},
-        {q:"At low pressure, gas adsorbed is proportional to?", a:"Pressure (Henry’s law)."},
-        {q:"Another name for gel permeation chromatography?", a:"Size exclusion chromatography."},
-        {q:"Principle of one detector used in GC/HPLC?", a:"Flame Ionization Detector (GC) detects ions from combustion; UV detector (HPLC) measures absorbance of UV light."},
-        {q:"Cell lysis by homogenizer is based on?", a:"Mechanical shear forces."},
-        {q:"Role of TEMED in SDS-PAGE?", a:"Catalyzes polymerization of acrylamide."},
-        {q:"Which salt and pH to selectively precipitate Myoglobin (pI 7) over Lysozyme (pI 11)?", a:"Ammonium sulfate at pH near 7."},
-        {q:"DNA migration rate in agarose gel depends on?", a:"Size of DNA fragments."},
-        {q:"What is an ultracentrifuge?", a:"High-speed centrifuge generating very high forces for small particle separation."},
-        {q:"Principle of lyophilization?", a:"Sublimation of frozen water under vacuum."},
-      ]
-    },
-    {
-      set: "Set 4",
-      questions: [
-        {q:"Explain concentration polarization at membrane surface.", a:"Solutes accumulate at membrane surface forming gradient, reducing filtration efficiency."},
-        {q:"Difference between vacuum distillation and steam distillation?", a:"Vacuum distillation lowers boiling point by pressure; steam distillation uses steam to vaporize compounds at lower temp."},
-        {q:"Principle of affinity chromatography?", a:"Separation based on specific binding between molecule and ligand."},
-        {q:"Difference between reducing and non-reducing PAGE?", a:"Reducing PAGE breaks disulfide bonds; non-reducing does not."},
-        {q:"Define distribution coefficient and its significance.", a:"Ratio of solute concentration in two phases; higher value means better extraction."},
-      ]
-    },
-    {
-      set: "Set 5",
-      questions: [
-        {q:"Define crystallization.", a:"Formation of solid crystals from solution or melt."},
-        {q:"What is reverse osmosis?", a:"Pressure-driven solvent separation through a membrane against osmotic pressure."},
-        {q:"Define biosorption.", a:"Adsorption of contaminants by biological materials."},
-        {q:"What is protein precipitation?", a:"Making proteins insoluble to separate from solution."},
-        {q:"Define lyophilization.", a:"Freeze-drying via sublimation."},
-        {q:"Technique to separate charged particles using electric field?", a:"Electrophoresis."},
-        {q:"Chromatography with stationary phase in narrow tube and forced mobile phase?", a:"Column chromatography."},
-        {q:"Process of heating mixture to vapor and cooling to get pure component?", a:"Distillation."},
-        {q:"Centrifugation works on which law?", a:"Stokes' law."},
-        {q:"Density gradient centrifugation is used for purification of?", a:"Cells and organelles."},
-      ]
-    },
-    {
-      set: "Set 6 (Brief)",
-      questions: [
-        {q:"List three features of centrifuge design.", a:"High-speed rotation, balanced rotors, temperature control."},
-        {q:"What is bioseparation?", a:"Separation of biological products from mixtures."},
-        {q:"What is adsorption?", a:"Accumulation of molecules on solid surface."},
-        {q:"What is filtration?", a:"Separation of solids from fluids through porous media."},
-        {q:"Principle of electrophoresis?", a:"Separation of charged particles under electric field by size and charge."},
-        {q:"Define cell disruption.", a:"Breaking cells to release contents."},
-        {q:"What is product polishing?", a:"Final purification to improve quality."},
-        {q:"What is reverse osmosis?", a:"Pressure-driven membrane separation."},
-        {q:"Define downstream and upstream processing.", a:"Upstream: Production phase; Downstream: Purification phase."},
-        {q:"Why is drying important?", a:"Removes moisture, stabilizes product, prevents microbes."},
-      ]
-    },
-    {
-      set: "Set 7",
-      questions: [
-        {q:"Compare downstream to upstream processing.", a:"Downstream is purification; upstream is production."},
-        {q:"Advantages of aqueous two-phase extraction over solvent extraction?", a:"Gentler, less toxic, selective."},
-        {q:"How to prevent membrane fouling?", a:"Cleaning, pre-filtration, antifouling membranes."},
-        {q:"Principle of immune-electrophoresis?", a:"Combines electrophoresis and immunodiffusion to separate proteins."},
-        {q:"Downstream steps in ethanol fermentation?", a:"Cell removal → distillation → dehydration → purification."},
-      ]
-    },
-    {
-      set: "Set 8",
-      questions: [
-        {q:"How is downstream processing different from upstream?", a:"Upstream: biomass/product generation; downstream: purification."},
-        {q:"What are reverse and normal phase chromatography?", a:"Reverse phase: nonpolar stationary; normal phase: polar stationary."},
-        {q:"Effect of temperature on chemisorption and physisorption?", a:"Chemisorption increases with temperature; physisorption decreases."},
-        {q:"Name two detectors used in GC and HPLC.", a:"GC: FID, TCD; HPLC: UV, fluorescence."},
-        {q:"What is terminal velocity in centrifugation?", a:"Constant speed when forces balance during sedimentation."},
-        {q:"Driving force in ultrafiltration and electrodialysis?", a:"Ultrafiltration: pressure; Electrodialysis: electric potential."},
-        {q:"What is selectivity of a solvent?", a:"Preference to dissolve specific components."},
-        {q:"Explain endosmosis.", a:"Solvent movement into membrane pores due to osmotic pressure."},
-        {q:"Principle of crystallization?", a:"Separation by differential solubility and controlled solid formation."},
-        {q:"How does EDTA assist in cell lysis?", a:"Chelates divalent cations, destabilizing cell membranes."},
-      ]
-    }
-  ];
-
-  const questionList = document.getElementById("questionList");
-  const main = document.getElementById("main");
-
-  // Build sidebar list
-  data.forEach((setItem, setIndex) => {
-    // Add set title
-    const setTitle = document.createElement("li");
-    setTitle.textContent = setItem.set;
-    setTitle.classList.add("set-title");
-    questionList.appendChild(setTitle);
-
-    // Add questions for this set
-    setItem.questions.forEach((item, qIndex) => {
-      const li = document.createElement("li");
-      li.textContent = `${setIndex*10 + qIndex + 1}. ${item.q}`;
-      li.dataset.setIndex = setIndex;
-      li.dataset.qIndex = qIndex;
-      questionList.appendChild(li);
-    });
-  });
-
-  // Handle click to display answer and highlight
-  questionList.addEventListener("click", (e) => {
-    const li = e.target.closest("li");
-    if (!li || li.classList.contains("set-title")) return;
-
-    // Remove active from all question li's
-    [...questionList.querySelectorAll("li")].forEach(el => el.classList.remove("active"));
-
-    li.classList.add("active");
-
-    const setIndex = Number(li.dataset.setIndex);
-    const qIndex = Number(li.dataset.qIndex);
-
-    const questionData = data[setIndex].questions[qIndex];
-
-    main.innerHTML = `<h3>Q${setIndex*10 + qIndex + 1}: ${questionData.q}</h3><p>${questionData.a}</p>`;
-
-    // Scroll main to top on new selection
-    main.scrollTop = 0;
-  });
-</script>
-
+  <script src="app.js"></script>
 </body>
 </html>
