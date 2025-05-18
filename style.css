@@ -1,4 +1,165 @@
+/* Reset and base styles - keep these as before */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #121212;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1f1f1f, #1f1f1f), 
+                    linear-gradient(90deg, #ff7f00, #ffd966);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+header {
+  background: linear-gradient(90deg, #ff7f00, #ffd966);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  border-radius: 12px 12px 0 0;
+}
+
+main {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Sidebar sets */
+nav#set-list {
+  width: 220px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 600px;
+  border: 1px solid transparent;
+  background-image: linear-gradient(#2a2a2a, #2a2a2a),
+                    linear-gradient(180deg, #ff7f00, #ffd966);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+nav#set-list li {
+  list-style: none;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  font-weight: 600;
+  color: #ddd;
+  transition: all 0.3s ease;
+}
+
+nav#set-list li:hover {
+  background: linear-gradient(90deg, #ff7f0055, #ffd96655);
+  color: #ffb84d;
+}
+
+nav#set-list li.active {
+  background: linear-gradient(90deg, #ff7f00cc, #ffd966cc);
+  border-left-color: #ffb84d;
+  color: #ffcc66;
+}
+
+/* Question card */
+.card {
+  flex-grow: 1;
+  background: #2d2d2d;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #eee;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #ffb84d;
+  min-height: 3.5rem;
+}
+
+.answer {
+  font-size: 1.15rem;
+  color: #eee;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+/* Navigation buttons */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+button {
+  background-image: linear-gradient(90deg, #ff7f00, #ffd966);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.6rem 1.3rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-image 0.3s ease;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+button:disabled {
+  background: #cc7a00;
+  cursor: not-allowed;
+  color: #664d00;
+}
+
+button:hover:not(:disabled) {
+  background-image: linear-gradient(90deg, #e67300, #ffcc33);
+}
+
+/* Scrollbar styling for sidebar */
+nav#set-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+nav#set-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+nav#set-list::-webkit-scrollbar-thumb {
+  background: #ff9f1a99;
+  border-radius: 4px;
+}
+
 /* Responsive styles */
+
+/* Large desktops & laptops (default is desktop, but below 900px we adjust) */
 @media (max-width: 900px) {
   main {
     flex-direction: column;
@@ -59,15 +220,45 @@
   }
 }
 
-@media (max-width: 480px) {
-  header {
-    font-size: 1.5rem;
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+  body {
     padding: 1rem;
   }
 
+  header {
+    font-size: 1.5rem;
+    padding: 1.2rem 1.5rem;
+  }
+
   nav#set-list li {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .answer {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  header {
+    font-size: 1.3rem;
+    padding: 1rem 1rem;
+  }
+
+  nav#set-list li {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
   }
 
   .question {
@@ -80,5 +271,32 @@
 
   button {
     padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  header {
+    font-size: 1.1rem;
+    padding: 0.8rem 0.8rem;
+  }
+
+  nav#set-list li {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.85rem;
+  }
+
+  button {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
   }
 }
