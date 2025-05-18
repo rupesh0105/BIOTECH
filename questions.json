@@ -1,0 +1,322 @@
+[
+  {
+    "title": "Set 1",
+    "questions": [
+      {
+        "question": "Name four stages of downstream processing.",
+        "answer": "1. Cell disruption\n2. Solid-liquid separation\n3. Purification\n4. Product polishing and formulation"
+      },
+      {
+        "question": "Give the principle of cell lysis by ultrasonication.",
+        "answer": "Ultrasonication causes cavitation (formation and collapse of microbubbles) producing shear forces that disrupt cell membranes."
+      },
+      {
+        "question": "Differentiate between precipitation and crystallization.",
+        "answer": "Precipitation: Rapid formation of insoluble solids, often amorphous.\nCrystallization: Slow, controlled formation of highly ordered solid crystals."
+      },
+      {
+        "question": "What is lyophilization?",
+        "answer": "Freeze-drying technique where frozen water in a product sublimates under vacuum, removing moisture without heat damage."
+      },
+      {
+        "question": "Define adsorption isotherms.",
+        "answer": "Graphs showing the relationship between amount of adsorbate on adsorbent and its concentration in fluid phase at constant temperature."
+      },
+      {
+        "question": "What is an azeotrope?",
+        "answer": "A mixture of liquids that boils at a constant temperature with fixed composition, making it inseparable by normal distillation."
+      },
+      {
+        "question": "How is dialysis different from reverse osmosis?",
+        "answer": "Dialysis separates solutes by diffusion through a semipermeable membrane. Reverse osmosis uses pressure to force solvent through a membrane against osmotic pressure."
+      },
+      {
+        "question": "Name the polymerizing agent in PAGE.",
+        "answer": "N,N'-Methylenebisacrylamide (Bis-acrylamide)."
+      },
+      {
+        "question": "What is the significance of relation factor in chromatography?",
+        "answer": "It quantifies relative retention times of compounds, aiding identification and column performance analysis."
+      },
+      {
+        "question": "Give properties of a good extraction solvent.",
+        "answer": "Selective for target, low toxicity, immiscible with other phase, chemically stable, economical and easy to recover."
+      }
+    ]
+  },
+  {
+    "title": "Set 2",
+    "questions": [
+      {
+        "question": "Very briefly mention the need of downstream processing.",
+        "answer": "To recover, purify, and concentrate desired products from complex biological mixtures."
+      },
+      {
+        "question": "Which unit operations can be applied for separation of biomolecules on the basis of ionic charge and solubility?",
+        "answer": "Ionic charge: Ion exchange chromatography\nSolubility: Precipitation"
+      },
+      {
+        "question": "Give the function and example of filter aids.",
+        "answer": "Function: Improves filtration by preventing clogging.\nExample: Diatomaceous earth."
+      },
+      {
+        "question": "What is the difference between salting in and salting out?",
+        "answer": "Salting in: Solubility increases with salt addition.\nSalting out: Protein precipitates at high salt concentrations."
+      },
+      {
+        "question": "How can you remove viruses and inorganic salts from your sample?",
+        "answer": "Viruses: Ultrafiltration or chromatography\nInorganic salts: Dialysis"
+      },
+      {
+        "question": "What are ampholytes?",
+        "answer": "Molecules that can act as both acids and bases, used in isoelectric focusing."
+      },
+      {
+        "question": "Significance of small particle size in HPLC stationary phase?",
+        "answer": "Increases surface area and resolution, leading to better separation."
+      },
+      {
+        "question": "What is bound and unbound moisture?",
+        "answer": "Bound: Tightly associated with molecules\nUnbound: Free and easily removed"
+      },
+      {
+        "question": "When is aqueous two phase extraction preferred over organic solvent extraction?",
+        "answer": "When working with sensitive biological molecules to avoid denaturation."
+      },
+      {
+        "question": "Name different rotors used in a centrifuge.",
+        "answer": "Fixed-angle, swinging-bucket, vertical, near-vertical."
+      }
+    ]
+  },
+  {
+    "title": "Set 3",
+    "questions": [
+      {
+        "question": "Differentiate between downstream and upstream processing.",
+        "answer": "Upstream: Includes fermentation, cell culture.\nDownstream: Includes recovery, purification, formulation."
+      },
+      {
+        "question": "At low pressures, the amount of the gas adsorbed is proportional to the pressure. What law is this?",
+        "answer": "This follows Henry’s Law."
+      },
+      {
+        "question": "Give another name for gel permeation chromatography.",
+        "answer": "Size exclusion chromatography."
+      },
+      {
+        "question": "Principle of one detector in GC/HPLC.",
+        "answer": "UV Detector: Measures absorbance of compounds at specific wavelengths as they elute."
+      },
+      {
+        "question": "Cell lysis using a homogenizer is based on what method?",
+        "answer": "Mechanical disruption using shear forces."
+      },
+      {
+        "question": "Role of TEMED in SDS-PAGE?",
+        "answer": "Catalyzes polymerization of acrylamide by accelerating APS decomposition."
+      },
+      {
+        "question": "Selective precipitation of Myoglobin (pI = 7) over Lysozyme (pI = 11): which salt and pH?",
+        "answer": "Use Ammonium sulfate. Set pH below 7."
+      },
+      {
+        "question": "Rate of DNA migration in agarose gel electrophoresis depends on what?",
+        "answer": "Primarily on size: smaller fragments migrate faster."
+      },
+      {
+        "question": "What is an ultracentrifuge?",
+        "answer": "High-speed centrifuge used for separation based on density, up to 1,000,000 × g."
+      },
+      {
+        "question": "Principle of lyophilization?",
+        "answer": "Freeze sample, then apply vacuum to sublimate ice directly into vapor."
+      }
+    ]
+  },
+  {
+    "title": "Set 4",
+    "questions": [
+      {
+        "question": "Explain concentration polarization at the membrane surface.",
+        "answer": "Accumulation of solutes near the membrane surface, reducing the driving force and membrane efficiency."
+      },
+      {
+        "question": "Differentiate between vacuum distillation and steam distillation.",
+        "answer": "Vacuum distillation: Lowers pressure to reduce boiling point.\nSteam distillation: Uses steam to vaporize heat-sensitive substances."
+      },
+      {
+        "question": "Write the principle of affinity chromatography.",
+        "answer": "Based on specific binding interactions between a target molecule and a ligand attached to a stationary phase."
+      },
+      {
+        "question": "Differentiate between reducing and non-reducing PAGE.",
+        "answer": "Reducing PAGE breaks disulfide bonds (e.g., with β-mercaptoethanol), non-reducing retains native structure."
+      },
+      {
+        "question": "Define distribution coefficient. What is its significance?",
+        "answer": "Ratio of solute concentration in two immiscible phases. A higher value indicates better extraction efficiency."
+      }
+    ]
+  },
+  {
+    "title": "Set 5",
+    "questions": [
+      {
+        "question": "Define crystallization.",
+        "answer": "Process of forming solid crystals from a homogeneous solution."
+      },
+      {
+        "question": "What do you understand by reverse osmosis?",
+        "answer": "Water purification process using pressure to force water through a semipermeable membrane."
+      },
+      {
+        "question": "Define biosorption.",
+        "answer": "Passive binding of contaminants by biological materials (e.g., algae, bacteria)."
+      },
+      {
+        "question": "What is protein precipitation?",
+        "answer": "Process of aggregating and separating proteins using salts or solvents."
+      },
+      {
+        "question": "Define lyophilization.",
+        "answer": "Freeze-drying technique for preserving biological materials by sublimating ice under vacuum."
+      },
+      {
+        "question": "Technique to separate charged particles using electric field?",
+        "answer": "Electrophoresis."
+      },
+      {
+        "question": "Chromatography with stationary phase in a tube and forced mobile phase?",
+        "answer": "Column chromatography."
+      },
+      {
+        "question": "Process of heating, vaporizing, cooling to purify liquid?",
+        "answer": "Distillation."
+      },
+      {
+        "question": "Centrifugation works on which law?",
+        "answer": "Stokes' Law."
+      },
+      {
+        "question": "Density gradient centrifugation is used for purification of?",
+        "answer": "Organelles and nucleic acids."
+      }
+    ]
+  },
+  {
+    "title": "Set 6",
+    "questions": [
+      {
+        "question": "List three features of centrifuge design.",
+        "answer": "1. Balanced rotor\n2. Safety enclosure\n3. Variable speed control"
+      },
+      {
+        "question": "What is bioseparation?",
+        "answer": "Process of purifying biological products from complex mixtures."
+      },
+      {
+        "question": "What is adsorption?",
+        "answer": "Adhesion of molecules to a solid surface."
+      },
+      {
+        "question": "What is filtration?",
+        "answer": "Removal of solids from liquids using a porous medium."
+      },
+      {
+        "question": "Give the principle of electrophoresis.",
+        "answer": "Separation of charged particles based on migration in an electric field."
+      },
+      {
+        "question": "Define cell disruption.",
+        "answer": "Breaking of cell membranes to release intracellular contents."
+      },
+      {
+        "question": "What is product polishing?",
+        "answer": "Final purification steps like drying, formulation, and packaging."
+      },
+      {
+        "question": "What is reverse osmosis?",
+        "answer": "Uses pressure to force solvent through membrane, removing impurities."
+      },
+      {
+        "question": "Define downstream and upstream processing.",
+        "answer": "Upstream: Production (e.g., fermentation).\nDownstream: Purification and recovery."
+      },
+      {
+        "question": "Why is drying important?",
+        "answer": "Reduces microbial growth and increases product stability."
+      }
+    ]
+  },
+  {
+    "title": "Set 7",
+    "questions": [
+      {
+        "question": "Compare downstream processing to upstream processing.",
+        "answer": "Downstream involves product recovery; upstream involves product generation."
+      },
+      {
+        "question": "Advantages of aqueous two-phase extraction over solvent extraction?",
+        "answer": "Non-toxic, gentle on biomolecules, better recovery of sensitive proteins."
+      },
+      {
+        "question": "How can fouling of membranes be prevented?",
+        "answer": "By backflushing, using pre-filters, or chemical cleaning."
+      },
+      {
+        "question": "Give the principle of immune-electrophoresis.",
+        "answer": "Combines electrophoresis and antigen-antibody reaction for protein identification."
+      },
+      {
+        "question": "Downstream steps in ethanol fermentation?",
+        "answer": "1. Cell removal\n2. Distillation\n3. Dehydration\n4. Purification"
+      }
+    ]
+  },
+  {
+    "title": "Set 8",
+    "questions": [
+      {
+        "question": "How is downstream processing different from upstream processing?",
+        "answer": "Upstream involves cell growth and product synthesis, downstream involves purification and formulation."
+      },
+      {
+        "question": "What are reverse phase and normal phase chromatography?",
+        "answer": "Reverse: Non-polar stationary, polar mobile\nNormal: Polar stationary, non-polar mobile"
+      },
+      {
+        "question": "Effect of temperature in chemisorption and physisorption?",
+        "answer": "Chemisorption increases with temperature; physisorption decreases."
+      },
+      {
+        "question": "Name at least two detectors used in GC and HPLC.",
+        "answer": "GC: Flame Ionization Detector (FID), Thermal Conductivity Detector (TCD)\nHPLC: UV Detector, Refractive Index Detector"
+      },
+      {
+        "question": "What is terminal velocity in a centrifugation run?",
+        "answer": "Maximum velocity at which particles move through the medium without further acceleration."
+      },
+      {
+        "question": "Name the driving force in ultrafiltration and electrodialysis.",
+        "answer": "Ultrafiltration: Pressure\nElectrodialysis: Electric potential"
+      },
+      {
+        "question": "What is selectivity of a solvent?",
+        "answer": "The ability of a solvent to preferentially dissolve one component over others."
+      },
+      {
+        "question": "Explain endoosmosis.",
+        "answer": "Movement of water into a cell through a semipermeable membrane."
+      },
+      {
+        "question": "Give the principle of crystallization.",
+        "answer": "Solute becomes supersaturated in solution and forms ordered solid crystals."
+      },
+      {
+        "question": "How does EDTA assist in cell lysis?",
+        "answer": "Chelates divalent metal ions, destabilizing cell walls and membranes."
+      }
+    ]
+  }
+]
