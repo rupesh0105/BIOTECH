@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Q&A Sidebar</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    display: flex;
+    height: 100vh;
+  }
+  #sidebar {
+    width: 300px;
+    background: #f0f0f0;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  #sidebar h2 {
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    background: #333;
+    color: white;
+  }
+  #sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #sidebar ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  #sidebar ul li:hover, #sidebar ul li.active {
+    background-color: #ddd;
+  }
+  #answer {
+    flex: 1;
+    padding: 20px;
+  }
+  #answer h3 {
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>Questions</h2>
+  <ul id="questionList">
+    <!-- Questions will be added here by JavaScript -->
+  </ul>
+</div>
+
+<div id="answer">
+  <h3>Select a question to see the answer</h3>
+</div>
+
+<script>
+  const qa = [
+    {
+      q: "a) Differentiate downstream processing and upstream processing",
+      a: "Upstream is production of biological products (cell growth, fermentation). Downstream is recovery and purification of the product."
+    },
+    {
+      q: "b) At low pressures, the amount of gas adsorbed is proportional to?",
+      a: "The amount adsorbed is proportional to pressure."
+    },
+    {
+      q: "c) Another name for gel permeation chromatography?",
+      a: "Size exclusion chromatography."
+    },
+    {
+      q: "d) Principle of working of any one detector used in GC/HPLC?",
+      a: "Flame Ionization Detector detects ions produced during combustion of organic compounds."
+    },
+    {
+      q: "e) Cell lysis using a homogenizer is based on what method?",
+      a: "Mechanical disruption by shear force."
+    },
+    {
+      q: "f) Role of TEMED in SDS-PAGE?",
+      a: "Catalyzes polymerization of acrylamide gel."
+    },
+    {
+      q: "g) Salt choice to precipitate Myoglobin selectively? Under what pH?",
+      a: "Ammonium sulfate at pH near 7."
+    },
+    {
+      q: "h) Rate of DNA migration in agarose gel electrophoresis is primarily based on?",
+      a: "Size (molecular weight) of DNA fragments."
+    },
+    {
+      q: "i) What is an ultracentrifuge?",
+      a: "High-speed centrifuge for separating small particles."
+    },
+    {
+      q: "j) Principle of lyophilization?",
+      a: "Freeze drying by sublimation under vacuum."
+    }
+  ];
+
+  const questionList = document.getElementById("questionList");
+  const answerDiv = document.getElementById("answer");
+
+  qa.forEach((item, idx) => {
+    const li = document.createElement("li");
+    li.textContent = item.q;
+    li.addEventListener("click", () => {
+      // Remove active class from all
+      [...questionList.children].forEach(li => li.classList.remove("active"));
+      li.classList.add("active");
+
+      answerDiv.innerHTML = `<h3>Answer</h3><p>${item.a}</p>`;
+    });
+    questionList.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
